@@ -58,3 +58,4 @@ iOSInjectionProject/
 
 # macOS
 .DS_Store
+Scripts/generate_pokemon_json.py
