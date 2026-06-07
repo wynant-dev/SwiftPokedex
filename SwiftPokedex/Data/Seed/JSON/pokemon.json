@@ -1,0 +1,23 @@
+[
+    {
+      "height": 15,
+      "id": 1,
+      "name": "Pokemon 1",
+      "weight": 54,
+      "types":[1, 2]
+    },
+    {
+      "height": 7,
+      "id": 2,
+      "name": "Pokemon 2",
+      "weight": 16,
+      "types":[2, 3]
+    },
+    {
+      "height": 7,
+      "id": 3,
+      "name": "Pokemon 3",
+      "weight": 16,
+      "types":[2, 3]
+    }
+]
