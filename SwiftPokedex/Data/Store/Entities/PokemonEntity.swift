@@ -11,24 +11,23 @@ final class PokemonEntity {
     var name: String
     var height: Int
     var weight: Int
-
-    @Relationship var types: [TypeEntity]
+    var typeIDs: [Int]
 
     init(id: Int, name: String, height: Int, weight: Int) {
         self.id = id
         self.name = name
         self.height = height
         self.weight = weight
-        self.types = []
+        self.typeIDs = []
     }
 
-    func toDomain() -> Pokemon {
+    func toDomain(typesByID: [Int: TypeEntity]) -> Pokemon {
         Pokemon(
             id: id,
             name: name,
             height: height,
             weight: weight,
-            types: types.map { $0.toDomain() }
+            types: typeIDs.compactMap { typesByID[$0]?.toDomain() }
         )
     }
 }

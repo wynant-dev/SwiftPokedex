@@ -3,7 +3,6 @@
 //  SwiftPokedex
 //
 
-import SwiftData
 import SwiftUI
 
 @main
@@ -12,7 +11,7 @@ struct SwiftPokedexApp: App {
 
     var body: some Scene {
         WindowGroup {
-            PokemonView(viewModel: dependencies.makePokemonViewModel())
+            PokedexView(viewModel: dependencies.makePokedexViewModel())
         }
     }
 }

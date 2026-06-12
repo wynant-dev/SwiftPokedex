@@ -6,5 +6,5 @@
 import Foundation
 
 protocol PokemonRepositoryProtocol {
-    func fetchPokemon() throws -> [Pokemon]
+    func fetchPokemon() async throws -> [Pokemon]
 }

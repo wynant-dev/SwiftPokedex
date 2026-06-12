@@ -3,7 +3,7 @@
 //  SwiftPokedex
 //
 
-struct Pokemon: Identifiable {
+struct Pokemon: Identifiable, Hashable {
     let id: Int
     let name: String
     let height: Int

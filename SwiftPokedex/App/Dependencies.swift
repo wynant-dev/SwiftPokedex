@@ -7,21 +7,18 @@ import Foundation
 import SwiftData
 
 final class Dependencies {
+
     let modelContainer: ModelContainer
 
+    private lazy var pokemonRepository: PokemonRepository = {
+        PokemonRepository(modelContainer: modelContainer)
+    }()
+
     init() {
-        do {
-            self.modelContainer = try SwiftDataStore.makeContainer()
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
+        self.modelContainer = try! SwiftDataStore.makeContainer()
     }
 
-    func makePokemonRepository() -> PokemonRepository {
-        PokemonRepository(context: modelContainer.mainContext)
-    }
-
-    func makePokemonViewModel() -> PokemonViewModel {
-        PokemonViewModel(repository: makePokemonRepository())
+    func makePokedexViewModel() -> PokedexViewModel {
+        PokedexViewModel(repository: pokemonRepository)
     }
 }

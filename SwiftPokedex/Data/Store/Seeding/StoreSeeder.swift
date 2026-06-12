@@ -56,7 +56,7 @@ struct StoreSeeder {
                 height: dto.height,
                 weight: dto.weight
             )
-            pokemon.types = dto.types.compactMap { types[$0] }
+            pokemon.typeIDs = dto.types
             context.insert(pokemon)
             pokemons[dto.id] = pokemon
         }
